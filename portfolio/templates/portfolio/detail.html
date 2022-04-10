@@ -1,11 +1,87 @@
 {% extends 'home/base.html' %}
+{% block css_custom %}
+{% load static %}
+{% endblock %}
+
 {% block content %}
 
-    <div class="container text-center">
-        <br>
-        <h1>{{ card.title }}</h1>
-        <h5>--{{ card.date|date:'F jS Y' }}--</h5>
-        <p>{{ card.description|linebreaksbr|safe }}</p>
+<div class="p-3 mb-3 bg-light border rounded-5" align="center">
+    <div class="container-fluid py-5">
+        <h1 class="featurette-heading" align="center">{{ card.title}}</h1><br>
+        <h3 class="featurette-heading" align="center">{{ card.description_head|safe|linebreaksbr }}<br>
+            <span class="text-muted">{{ card.description_span|safe|linebreaksbr }}</span></h3><br>
+        <p class="lead mx-5" align="left" style="white-space: pre-wrap;">{{ card.description_lead|safe|linebreaksbr }}</p>
+        <div class="btn-group">
+            <a class="btn btn-outline-secondary btn-lg px-4" href="../">Назад</a>
+            <a class="btn btn-outline-secondary btn-lg px-4" target="_blank" href="{{ card.report.url }}">Отчет</a>
+        </div>
     </div>
 
+    {% if card.res1 != "nothing" %}
+    <hr class="featurette-divider">
+    <div class="row featurette py-3">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{{ card.res1_head }} <span class="text-muted">{{ card.res1_span }}</span></h2>
+        <p class="lead">{{ card.res1_lead }}</p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="500" height="auto" src="{{ card.res1.url }}">
+      </div>
+    </div>
+    {% endif %}
+
+    {% if card.res2 != "nothing" %}
+    <hr class="featurette-divider">
+    <div class="row featurette py-3">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">{{ card.res2_head }} <span class="text-muted">{{ card.res2_span }}</span></h2>
+        <p class="lead">{{ card.res2_lead }}</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="500" height="auto" src="{{ card.res2.url }}">
+      </div>
+    </div>
+    {% endif %}
+
+    {% if card.res3 != "nothing" %}
+    <hr class="featurette-divider">
+    <div class="row featurette py-3">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{{ card.res3_head }} <span class="text-muted">{{ card.res3_span }}</span></h2>
+        <p class="lead">{{ card.res3_lead }}</p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="500" height="auto" src="{{ card.res3.url }}">
+      </div>
+    </div>
+    {% endif %}
+
+    {% if card.video != "nothing" %}
+    <hr class="featurette-divider">
+    <div class="row featurette py-3">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{{ card.res3_head }} <span class="text-muted">{{ card.res3_span }}</span></h2>
+        <p class="lead">{{ card.res3_lead }}</p>
+      </div>
+      <div class="col-md-5">
+          <video>
+              <source src="{{ card.video.url }}" type="video/webm;codecs='vp8, vorbis'">
+          </video>
+      </div>
+    </div>
+    {% endif %}
+</div>
+<video >
+    <source src="{{ card.video.url }}" type="video/webm">
+</video>
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">В начало страницы</a>
+    </p>
+  </div>
+</footer>
 {% endblock %}

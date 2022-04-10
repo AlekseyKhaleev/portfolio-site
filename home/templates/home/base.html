@@ -9,6 +9,8 @@
     <link rel="icon" href="{% static 'portfolio/icon.ico' %}">
     <title>Khaleev</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link href="{% static 'css/heroes.css' %}" rel="stylesheet" type="text/css">
+    {% block css_custom %}{% endblock %}
       <style>
       BODY { background: #fafafa }
       H5 { text-align: center }
@@ -16,16 +18,27 @@
       A:visited { color: #2e3436 }
       A:active { color: #2e3436 }
       A:hover { color: black }
-      .exmpl img {
-        object-fit: contain;
-        width: 100%;
-        height: 100%;
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
       }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .navbar {
+      margin: 0;
+      }
+
     </style>
-    {% block css_custom %}{% endblock %}
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-#fafafa">
+    <nav class="navbar navbar-expand-md navbar-light bg-fafafa">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
         <img src="{% static 'portfolio/logo.png' %}" alt="" width="170" height="75">
@@ -54,7 +67,6 @@
         </div>
       </div>
     </nav>
-
     {% block content %}{% endblock %}
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
