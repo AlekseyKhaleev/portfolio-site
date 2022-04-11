@@ -10,7 +10,7 @@
         <h1 class="featurette-heading" align="center">{{ card.title}}</h1><br>
         <h3 class="featurette-heading" align="center">{{ card.description_head|safe|linebreaksbr }}<br>
             <span class="text-muted">{{ card.description_span|safe|linebreaksbr }}</span></h3><br>
-        <p class="lead mx-5" align="left" style="white-space: pre-wrap;">{{ card.description_lead|safe|linebreaksbr }}</p>
+        <p class="lead mx-5" align="left" style="white-space: pre-wrap;">{{ card.description_lead|safe }}</p><br>
         <div class="btn-group">
             <a class="btn btn-outline-secondary btn-lg px-4" href="../">Назад</a>
             {% if card.report != "nothing" %}
@@ -25,7 +25,7 @@
     <div class="row featurette py-3">
       <div class="col-md-7">
         <h2 class="featurette-heading">{{ card.res1_head }} <span class="text-muted">{{ card.res1_span }}</span></h2>
-        <p class="lead">{{ card.res1_lead }}</p>
+        <p class="lead" style="white-space: pre-wrap;">{{ card.res1_lead|safe }}</p>
       </div>
       <div class="col-md-5">
         <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -39,7 +39,7 @@
     <div class="row featurette py-3">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">{{ card.res2_head }} <span class="text-muted">{{ card.res2_span }}</span></h2>
-        <p class="lead">{{ card.res2_lead }}</p>
+        <p class="lead" style="white-space: pre-wrap;">{{ card.res2_lead|safe }}</p>
       </div>
       <div class="col-md-5 order-md-1">
         <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -53,7 +53,7 @@
     <div class="row featurette py-3">
       <div class="col-md-7">
         <h2 class="featurette-heading">{{ card.res3_head }} <span class="text-muted">{{ card.res3_span }}</span></h2>
-        <p class="lead">{{ card.res3_lead }}</p>
+        <p class="lead" style="white-space: pre-wrap;">{{ card.res3_lead|safe|linebreaksbr }}</p>
       </div>
       <div class="col-md-5">
         <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -66,7 +66,7 @@
     <hr class="featurette-divider">
     <div class="row featurette py-3">
         <h1 class="featurette-heading">{{ card.video_head }} <span class="text-muted">{{ card.video_span }}</span></h1>
-        <p class="lead">{{ card.video_lead }}</p>
+        <p class="lead" style="white-space: pre-wrap;">{{ card.video_lead }}</p>
     </div>
     <div class="container">
         <video src="{{ card.video.url }}" controls width="700" height="100%">{{ card.title }}</video>
