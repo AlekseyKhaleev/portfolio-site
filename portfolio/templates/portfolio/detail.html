@@ -1,6 +1,7 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% block css_custom %}
+<link href="{% static 'css/modals.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -28,10 +29,16 @@
         <p class="lead" style="white-space: pre-wrap;">{{ card.res1_lead|safe }}</p>
       </div>
       <div class="col-md-5">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-             width="500" height="auto" src="{{ card.res1.url }}">
+        <img role="button" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="500" height="auto" src="{{ card.res1.url }}" data-bs-toggle="modal" data-bs-target="#res1">
+          <div class="modal fade" id="res1" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="auto" height="100%" src="{{ card.res1.url }}">
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
     {% endif %}
 
     {% if card.res2 != "nothing" %}
@@ -42,10 +49,16 @@
         <p class="lead" style="white-space: pre-wrap;">{{ card.res2_lead|safe }}</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-             width="500" height="auto" src="{{ card.res2.url }}">
+        <img role="button" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="500" height="auto" src="{{ card.res2.url }}" data-bs-toggle="modal" data-bs-target="#res2">
+          <div class="modal fade" id="res2" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="auto" height="100%" src="{{ card.res2.url }}">
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
     {% endif %}
 
     {% if card.res3 != "nothing" %}
@@ -56,10 +69,17 @@
         <p class="lead" style="white-space: pre-wrap;">{{ card.res3_lead|safe|linebreaksbr }}</p>
       </div>
       <div class="col-md-5">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-             width="500" height="auto" src="{{ card.res3.url }}">
+          <img role="button" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="500" height="auto" src="{{ card.res3.url }}" data-bs-toggle="modal" data-bs-target="#res3">
+          <div class="modal fade" id="res3" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             width="auto" height="100%" src="{{ card.res3.url }}">
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
+
     {% endif %}
 
     {% if card.video != "nothing" %}
