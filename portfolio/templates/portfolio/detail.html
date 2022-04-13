@@ -1,18 +1,15 @@
 {% extends 'home/base.html' %}
 {% load static %}
-{% block css_custom %}
-<link href="{% static 'css/modals.css' %}" rel="stylesheet">
-{% endblock %}
 
 {% block content %}
 
-<div class="p-3 mx-3 mb-3 bg-light border rounded-5" align="center">
+<div class="p-1 mx-3 mb-3 bg-light border rounded-5" align="center">
     <div class="container-fluid py-5">
-        <h1 class="featurette-heading" align="center">{{ card.title}}</h1><br>
-        <h3 class="featurette-heading" align="center">{{ card.description_head|safe|linebreaksbr }}<br>
-            <span class="text-muted">{{ card.description_span|safe|linebreaksbr }}</span></h3><br>
-        <p class="lead mx-5" align="left" style="white-space: pre-wrap;">{{ card.description_lead|safe }}</p><br>
-        <div class="btn-group">
+        <h1 class="featurette-heading adapt-head" align="center">{{ card.title}}</h1><br>
+        <h3 class="featurette-heading adapt-subhead" align="center">{{ card.description_head|safe|linebreaksbr }}<br>
+            <span class="text-muted adapt-subhead">{{ card.description_span|safe|linebreaksbr }}</span></h3><br>
+        <p class="lead adapt-text" align="left" style="white-space: pre-wrap;">{{ card.description_lead|safe }}</p><br>
+        <div class="btn-group" align="center">
             <a class="btn btn-outline-secondary btn-lg px-4" href="../">Назад</a>
             {% if card.report != "nothing" %}
             <a class="btn btn-outline-secondary btn-lg px-4" target="_blank" href="{{ card.report.url }}">Отчет</a>
@@ -25,8 +22,9 @@
     <hr class="featurette-divider">
     <div class="row featurette py-3">
       <div class="col-md-7">
-        <h2 class="featurette-heading">{{ card.res1_head }} <span class="text-muted">{{ card.res1_span }}</span></h2>
-        <p class="lead" style="white-space: pre-wrap;" align="center">{{ card.res1_lead|safe }}</p>
+        <h2 class="featurette-heading adapt-subhead">{{ card.res1_head }} <span class="text-muted adapt-subhead">
+            {{ card.res1_span }}</span></h2>
+        <p class="lead adapt-text" style="white-space: pre-wrap;" align="center">{{ card.res1_lead|safe }}</p>
       </div>
       <div class="col-md-5">
         <img role="button" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -45,8 +43,9 @@
     <hr class="featurette-divider">
     <div class="row featurette py-3">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">{{ card.res2_head }} <span class="text-muted">{{ card.res2_span }}</span></h2>
-        <p class="lead" style="white-space: pre-wrap;">{{ card.res2_lead|safe }}</p>
+        <h2 class="featurette-heading adapt-subhead">{{ card.res2_head }} <span class="text-muted adapt-subhead">
+            {{ card.res2_span }}</span></h2>
+        <p class="lead adapt-text" style="white-space: pre-wrap;">{{ card.res2_lead|safe }}</p>
       </div>
       <div class="col-md-5 order-md-1">
         <img role="button" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -65,8 +64,9 @@
     <hr class="featurette-divider">
     <div class="row featurette py-3">
       <div class="col-md-7">
-        <h2 class="featurette-heading">{{ card.res3_head }} <span class="text-muted">{{ card.res3_span }}</span></h2>
-        <p class="lead" style="white-space: pre-wrap;">{{ card.res3_lead|safe|linebreaksbr }}</p>
+        <h2 class="featurette-heading adapt-subhead">{{ card.res3_head }} <span class="text-muted adapt-subhead">
+            {{ card.res3_span }}</span></h2>
+        <p class="lead adapt-text" style="white-space: pre-wrap;">{{ card.res3_lead|safe|linebreaksbr }}</p>
       </div>
       <div class="col-md-5">
           <img role="button" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -86,8 +86,9 @@
     <hr class="featurette-divider">
     <div class="row featurette py-3">
         <div class="col-md-12">
-        <h1 class="featurette-heading">{{ card.video_head }} <span class="text-muted">{{ card.video_span }}</span></h1>
-        <p class="lead" style="white-space: pre-wrap;">{{ card.video_lead }}</p>
+        <h1 class="featurette-heading adapt-subhead">{{ card.video_head }} <span class="text-muted adapt-subhead">
+            {{ card.video_span }}</span></h1>
+        <p class="lead adapt-text" style="white-space: pre-wrap;">{{ card.video_lead }}</p>
             <video src="{{ card.video.url }}" controls width="80%" height="auto">{{ card.title }}</video>
         </div>
     </div>
