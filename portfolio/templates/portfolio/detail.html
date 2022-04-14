@@ -4,17 +4,17 @@
 {% block content %}
 
 <div class="p-1 mx-3 mb-3 bg-light border rounded-5" align="center">
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" >
         <h1 class="featurette-heading adapt-head" align="center">{{ card.title}}</h1><br>
         <h3 class="featurette-heading adapt-subhead" align="center">{{ card.description_head|safe|linebreaksbr }}<br>
             <span class="text-muted adapt-subhead">{{ card.description_span|safe|linebreaksbr }}</span></h3><br>
         <p class="lead adapt-text" align="left" style="white-space: pre-wrap;">{{ card.description_lead|safe }}</p><br>
         <div class="btn-group" align="center">
-            <a class="btn btn-outline-secondary btn-lg px-4" href="../">Назад</a>
+            <a class="btn btn-outline-secondary btn-lg px-4 adapt-text" href="../">Назад</a>
             {% if card.report != "nothing" %}
-            <a class="btn btn-outline-secondary btn-lg px-4" target="_blank" href="{{ card.report.url }}">Отчет</a>
+            <a class="btn btn-outline-secondary btn-lg px-4 adapt-text" target="_blank" href="{{ card.report.url }}">Отчет</a>
             {% endif %}
-            <a class="btn btn-outline-secondary btn-lg px-4" target="_blank" href="{{ card.github }}">GitHub</a>
+            <a class="btn btn-outline-secondary btn-lg px-4 adapt-text" target="_blank" href="{{ card.github }}">GitHub</a>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
     </div>
     </div>
     {% endif %}
-</div>
+
 <footer class="text-muted py-5">
   <div class="container">
     <p class="float-end mb-1">
